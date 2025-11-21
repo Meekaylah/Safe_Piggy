@@ -5,7 +5,7 @@ const VALID_PAYMENT_METHODS = ['Cash', 'Card', 'Bank Transfer'];
 function validateExpensePayload(payload) {
   const errors = [];
 
-  const { description, amount, category, date, payment_method } = payload;
+  const { description, amount, category, date, payment_method, recurring } = payload;
 
   if (!description || typeof description !== 'string' || description.trim().length === 0) {
     errors.push('Description is required.');
@@ -28,7 +28,20 @@ function validateExpensePayload(payload) {
     errors.push('Invalid date format. Use ISO date string.');
   }
 
-  return { isValid: errors.length === 0, errors, parsed: { description, amount: numAmount, category, date, payment_method } };
+  const recurringFlag = recurring ? 1 : 0;
+
+    return {
+        isValid: errors.length === 0,
+        errors,
+        parsed: {
+            description,
+            amount: numAmount,
+            category,
+            date,
+            payment_method,
+            recurring: recurringFlag,
+        },
+    };
 }
 
 module.exports = {

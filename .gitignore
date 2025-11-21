@@ -1,0 +1,15 @@
+# Database files
+*.db
+*.db-shm
+*.db-wal
+safe-piggy.db
+test-expenses.db
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log

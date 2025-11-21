@@ -9,7 +9,8 @@ db.exec(`
     amount REAL NOT NULL,
     category TEXT NOT NULL,
     date TEXT NOT NULL,
-    payment_method TEXT NOT NULL
+    payment_method TEXT NOT NULL,
+    recurring INTEGER NOT NULL DEFAULT 0
   );
 `);
 
