@@ -53,37 +53,6 @@ npm run dev
 | GET    | `/api/stats/month`         | Get monthly statistics                                                                |
 | GET    | `/api/expenses/export/csv` | Export expenses as CSV                                                                |
 
-### Example Request
-
-```json
-POST /api/expenses
-{
-  "description": "Groceries",
-  "amount": 45.50,
-  "category": "Food",
-  "date": "2024-01-15",
-  "payment_method": "Card",
-  "recurring": false
-}
-```
-
-## Database Schema
-
-```sql
-CREATE TABLE expenses (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  description TEXT NOT NULL,
-  amount REAL NOT NULL,
-  category TEXT NOT NULL,
-  date TEXT NOT NULL,
-  payment_method TEXT NOT NULL,
-  recurring INTEGER NOT NULL DEFAULT 0
-);
-```
-
-**Categories:** Food, Transport, Entertainment, Bills, Other  
-**Payment Methods:** Cash, Card, Bank Transfer
-
 ## Project Structure
 
 ```
